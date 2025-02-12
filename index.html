@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nerv glorious is a group of passionate gamers who create teams, collaborate, and enjoy gaming together.">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <title>Nerv - We Play Games</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #eee;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            min-height: 50px;
+            background-color: rgba(26, 26, 26, 0.7);
+            backdrop-filter: blur(5px);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            box-sizing: border-box;
+        }
+
+        .navbar .logo {
+            font-size: 1.6em;
+            font-weight: bold;
+            flex-grow: 1;
+        }
+
+        .navbar .nav-links {
+            display: flex;
+            gap: 20px; /* Jarak antar tautan ditingkatkan */
+        }
+
+        .navbar .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            white-space: nowrap;
+            font-size: 1.1em; /* Ukuran font ditingkatkan */
+        }
+        
+        .navbar .nav-links a:hover {
+            color: #ff6600; /* Warna oranye dari tombol CTA */
+            transition: color 0.3s;
+        }
+
+        /* Hero Section Styles */
+        .hero {
+            text-align: center;
+            padding: 80px 20px 50px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .hero h1 {
+            font-size: 6.5em;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.8em;
+            color: #ddd;
+            margin-bottom: 30px;
+        }
+
+        .hero .cta-button {
+            background-color: #ff6600;
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.4em;
+            transition: background-color 0.3s;
+        }
+
+        .hero .cta-button:hover {
+            background-color: #e65c00;
+            transform: scale(1.05); /* Efek membesar sedikit */
+            box-shadow: 0 0 15px rgba(255, 102, 0, 0.7);
+        }
+
+        /* Mockup Section Styles */
+        .mockup {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .mockup img {
+            width: 85%;
+            max-width: 90%;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(240, 90, 40, 0.5);
+        }
+
+        /* Footer Section Styles */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #888;
+        }
+        
+        /* Elemen awalnya tidak terlihat */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        /* Ketika elemen masuk ke viewport */
+        .fade-up.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Sembunyikan hanya jika JavaScript aktif */
+        .fade-up {
+            opacity: 1; /* Awalnya tetap terlihat */
+            transform: translateY(0);
+        }
+        
+        /* Saat JavaScript berjalan, baru atur ke default animasi */
+        .js-enabled .fade-up {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        /* Ketika elemen masuk ke viewport */
+        .js-enabled .fade-up.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 10px 15px;
+                height: 7%;
+            }
+
+            .navbar .logo {
+                font-size: 1.5em;
+            }
+
+            .navbar .nav-links {
+                justify-content: flex-end; /* Tautan tetap di kanan */
+                gap: 15px;
+            }
+
+            .navbar .nav-links a {
+                font-size: 1em; /* Ukuran font sedikit dikurangi */
+                padding: 5px;
+            }
+
+            .hero {
+                padding: 60px 20px 40px;
+            }
+
+            .hero h1 {
+                font-size: 3em;
+            }
+
+            .hero p {
+                font-size: 1.4em;
+            }
+
+            .hero .cta-button {
+                padding: 12px 25px;
+                font-size: 1em;
+                box-shadow: 0 0 10px rgba(255, 102, 0, 0.5);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">Nerv glorious</div>
+        <div class="nav-links">
+            <a href="#">About Us</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero fade-up">
+        <h1>We play<br>Games</h1>
+        <p>Nerv glorious is a group of people who play games. We create teams to play games, work together to complete games, and give each other suggestions to make playing games more exciting.</p>
+        <a href="#" class="cta-button">About us</a>
+    </div>
+
+    <!-- Mockup Section -->
+    <div class="mockup fade-up">
+        <img src="main-dark.webp" alt="mockup Nerv" loading="lazy">
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer fade-up">
+        <p>© 2025 Nerv glorious. All rights reserved.</p>
+    </div>
+<script>
+  document.documentElement.classList.add('js-enabled'); // Tambahkan class ke <html>
+  
+  document.addEventListener("DOMContentLoaded", function () {
+      const fadeElements = document.querySelectorAll('.fade-up');
+  
+      const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                  entry.target.classList.add('show');
+              }
+          });
+      }, { threshold: 0.1 });
+  
+      fadeElements.forEach(el => observer.observe(el));
+  });
+</script>
+</body>
+</html>
