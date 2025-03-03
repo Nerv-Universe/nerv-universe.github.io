@@ -70,13 +70,57 @@
         /* Hero Section Styles */
         .hero {
             text-align: center;
-            padding: 80px 20px 50px;
+            padding: 120px 20px 50px; /* Jarak atas diperbesar */
             max-width: 900px;
             margin: auto;
         }
 
+        /* Logo Kedua */
+        .hero-logo {
+            margin-bottom: 20px; /* Jarak antara logo dan h1 */
+            position: relative; /* Untuk mengatur posisi nerv-text */
+        }
+
+        .hero-logo .n-capital {
+            font-family: 'Russo One', sans-serif; /* Font tebal */
+            font-size: 8em; /* Ukuran besar untuk "N" */
+            font-weight: bold;
+            transform: skew(-15deg); /* Miringkan teks */
+            display: block;
+            line-height: 0.8; /* Jarak antara "N" dan "Nerv" diperkecil */
+            background: linear-gradient(45deg, #ff6600, #ff3300); /* Gradient oranye */
+            -webkit-background-clip: text; /* Clip teks untuk gradient */
+            -webkit-text-fill-color: transparent; /* Transparan untuk gradient */
+            text-shadow: 0 0 20px rgba(255, 102, 0, 0.7), 0 0 40px rgba(255, 102, 0, 0.5); /* Shadow neon */
+        }
+
+        .hero-logo .nerv-text {
+            font-family: 'Poppins', sans-serif; /* Font default */
+            font-size: 1.2em; /* Ukuran kecil untuk "Nerv" */
+            font-style: italic; /* Miring */
+            transform: skew(-15deg); /* Miringkan teks */
+            display: block;
+            margin-top: -7px; /* Jarak antara "N" dan "Nerv" diperkecil */
+            color: #ddd; /* Warna abu-abu muda */
+            position: absolute; /* Untuk menggeser posisi */
+            left: 48%; /* Posisi awal di tengah */
+            transform: translateX(-38%) skew(-15deg); /* Geser ke kiri dan miringkan */
+            white-space: nowrap; /* Hindari pemotongan teks */
+        }
+
+        /* Garis dekoratif di bawah "Nerv" */
+        .hero-logo .nerv-text::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, #ff6600, transparent); /* Gradient oranye */
+            margin: 3px auto 0; /* Jarak antara "Nerv" dan garis diperkecil */
+        }
+
         .hero h1 {
             font-size: 6.5em;
+            margin-top: 60px;
             margin-bottom: 20px;
             font-family: 'Orbitron', sans-serif; /* Font untuk H1 */
         }
@@ -159,7 +203,16 @@
             }
 
             .hero {
-                padding: 60px 20px 40px;
+                padding: 100px 20px 40px; /* Jarak atas diperbesar untuk mobile */
+            }
+
+            .hero-logo .n-capital {
+                font-size: 6em; /* Ukuran lebih kecil untuk mobile */
+            }
+
+            .hero-logo .nerv-text {
+                font-size: 1em; /* Ukuran lebih kecil untuk mobile */
+                transform: translateX(-50%) skew(-15deg); /* Sesuaikan untuk mobile */
             }
 
             .hero h1 {
@@ -189,6 +242,11 @@
 
     <!-- Hero Section -->
     <div class="hero fade-up">
+        <!-- Logo Kedua -->
+        <div class="hero-logo">
+            <span class="n-capital">N</span>
+            <span class="nerv-text">Nerv</span>
+        </div>
         <h1>We play<br>Games</h1>
         <p>Nerv glorious is a group of people who play games. We create teams to play games, work together to complete games, and give each other suggestions to make playing games more exciting.</p>
         <a href="#" class="cta-button">About us</a>
