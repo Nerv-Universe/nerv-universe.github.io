@@ -28,6 +28,11 @@
             overflow-x: hidden;
         }
 
+        /* Nonaktifkan scroll sementara saat halaman dimuat */
+        body.loading {
+            overflow: hidden;
+        }
+
         /* Navbar Styles */
         .navbar {
             position: fixed;
@@ -168,7 +173,7 @@
 
         .mockup img {
             width: 85%;
-            max-width: 90%;
+            max-width: 100%;
             border-radius: 10px;
             box-shadow: 0 0 30px rgba(240, 90, 40, 0.5);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -418,6 +423,9 @@
     <script>
         document.documentElement.classList.add('js-enabled'); // Tambahkan class ke <html>
 
+        // Nonaktifkan scroll sementara saat halaman dimuat
+        document.body.classList.add('loading');
+
         // Deteksi scroll untuk navbar
         const navbar = document.querySelector('.navbar');
         window.addEventListener('scroll', () => {
@@ -428,19 +436,27 @@
             }
         });
 
-        // Animasi fade-up
+        // Animasi fade-up dengan delay
         document.addEventListener("DOMContentLoaded", function () {
             const fadeElements = document.querySelectorAll('.fade-up');
 
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('show');
+                        // Tambahkan delay 100ms sebelum animasi dimulai
+                        setTimeout(() => {
+                            entry.target.classList.add('show');
+                        }, 100);
                     }
                 });
             }, { threshold: 0.1 });
 
             fadeElements.forEach(el => observer.observe(el));
+
+            // Aktifkan scroll setelah halaman selesai dimuat
+            setTimeout(() => {
+                document.body.classList.remove('loading');
+            }, 500); // Delay 500ms untuk memastikan semua elemen sudah dimuat
         });
     </script>
 </body>
