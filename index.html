@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Nerv glorious is a group of passionate gamers who create teams, collaborate, and enjoy gaming together.">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/image/icon.png" type="image/png">
 
     <!-- Tambahkan Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@400;700&family=Poppins:wght@400;700&family=Russo+One&display=swap" rel="stylesheet">
@@ -12,139 +12,72 @@
     <!-- Tambahkan Font Awesome untuk ikon media sosial -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
+    <!-- Tambahkan CSS Universal -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
     <title>Nerv - We Play Games</title>
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Global Styles */
-        body {
-            font-family: 'Poppins', sans-serif; /* Default font */
-            background-color: #1a1a1a;
-            color: #eee;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
-
-        /* Nonaktifkan scroll sementara saat halaman dimuat */
-        body.loading {
-            overflow: hidden;
-        }
-
-        /* Navbar Styles */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            min-height: 50px;
-            background-color: rgba(26, 26, 26, 0.7);
-            backdrop-filter: blur(5px);
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 100;
-            box-sizing: border-box;
-            transition: border-bottom 0.3s, box-shadow 0.3s; /* Efek transisi */
-        }
-
-        /* Efek border atau shadow saat navbar di-scroll */
-        .navbar-scrolled {
-            border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* Border putih transparan */
-            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1); /* Shadow putih */
-        }
-
-        .navbar .logo {
-            font-size: 1.6em;
-            font-weight: bold;
-            flex-grow: 1;
-            font-family: 'Russo One', sans-serif; /* Font untuk logo */
-        }
-
-        .navbar .nav-links {
-            display: flex;
-            gap: 20px;
-        }
-
-        .navbar .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            white-space: nowrap;
-            font-size: 1.1em;
-            font-family: 'Poppins', sans-serif; /* Default font untuk nav-links */
-        }
-        
-        .navbar .nav-links a:hover {
-            color: #ff6600;
-            transition: color 0.3s;
-        }
-
-        /* Hero Section Styles */
+        /* Style Spesifik untuk Halaman Index */
         .hero {
             text-align: center;
-            padding: 120px 20px 50px; /* Jarak atas diperbesar */
+            padding: 150px 20px 50px;
             max-width: 900px;
             margin: auto;
         }
 
-        /* Logo Kedua */
         .hero-logo {
-            margin-bottom: 20px; /* Jarak antara logo dan h1 */
-            position: relative; /* Untuk mengatur posisi nerv-text */
+            margin-bottom: 20px;
+            position: relative;
         }
 
         .hero-logo .n-capital {
-            font-family: 'Russo One', sans-serif; /* Font tebal */
-            font-size: 8em; /* Ukuran besar untuk "N" */
+            font-family: 'Russo One', sans-serif;
+            font-size: 8em;
             font-weight: bold;
-            transform: skew(-15deg); /* Miringkan teks */
+            transform: skew(-15deg);
             display: block;
-            line-height: 0.8; /* Jarak antara "N" dan "Nerv" diperkecil */
-            background: linear-gradient(45deg, #ff6600, #ff3300); /* Gradient oranye */
-            -webkit-background-clip: text; /* Clip teks untuk gradient */
-            -webkit-text-fill-color: transparent; /* Transparan untuk gradient */
-            text-shadow: 0 0 20px rgba(255, 102, 0, 0.7), 0 0 40px rgba(255, 102, 0, 0.5); /* Shadow neon */
+            line-height: 0.8;
+            background: linear-gradient(45deg, #ff6600, #ff3300);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(255, 102, 0, 0.7), 0 0 40px rgba(255, 102, 0, 0.5);
         }
 
         .hero-logo .nerv-text {
-            font-family: 'Poppins', sans-serif; /* Font default */
-            font-size: 1.2em; /* Ukuran kecil untuk "Nerv" */
-            font-style: italic; /* Miring */
-            transform: skew(-15deg); /* Miringkan teks */
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2em;
+            font-style: italic;
+            transform: skew(-15deg);
             display: block;
-            margin-top: -7px; /* Jarak antara "N" dan "Nerv" diperkecil */
-            color: #ddd; /* Warna abu-abu muda */
-            position: absolute; /* Untuk menggeser posisi */
-            left: 48%; /* Posisi awal di tengah */
-            transform: translateX(-38%) skew(-15deg); /* Geser ke kiri dan miringkan */
-            white-space: nowrap; /* Hindari pemotongan teks */
+            margin-top: -7px;
+            color: #ddd;
+            position: absolute;
+            left: 48%;
+            transform: translateX(-38%) skew(-15deg);
+            white-space: nowrap;
         }
 
-        /* Garis dekoratif di bawah "Nerv" */
         .hero-logo .nerv-text::after {
             content: '';
             display: block;
             width: 60px;
             height: 2px;
-            background: linear-gradient(90deg, #ff6600, transparent); /* Gradient oranye */
-            margin: 3px auto 0; /* Jarak antara "Nerv" dan garis diperkecil */
+            background: linear-gradient(90deg, #ff6600, transparent);
+            margin: 3px auto 0;
         }
 
         .hero h1 {
             font-size: 6.5em;
             margin-top: 60px;
             margin-bottom: 20px;
-            font-family: 'Orbitron', sans-serif; /* Font untuk H1 */
+            font-family: 'Orbitron', sans-serif;
         }
 
         .hero p {
             font-size: 1.8em;
             color: #ddd;
             margin-bottom: 30px;
-            font-family: 'Montserrat', sans-serif; /* Font untuk paragraf */
+            font-family: 'Montserrat', sans-serif;
         }
 
         .hero .cta-button {
@@ -155,7 +88,7 @@
             text-decoration: none;
             font-size: 1.4em;
             transition: background-color 0.3s;
-            font-family: 'Poppins', sans-serif; /* Default font untuk button */
+            font-family: 'Poppins', sans-serif;
         }
 
         .hero .cta-button:hover {
@@ -164,7 +97,6 @@
             box-shadow: 0 0 15px rgba(255, 102, 0, 0.7);
         }
 
-        /* Mockup Section */
         .mockup {
             margin-top: 50px;
             text-align: center;
@@ -173,7 +105,7 @@
 
         .mockup img {
             width: 85%;
-            max-width: 100%;
+            max-width: 90%;
             border-radius: 10px;
             box-shadow: 0 0 30px rgba(240, 90, 40, 0.5);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -267,62 +199,8 @@
             transform: scale(1.05);
             box-shadow: 0 0 15px rgba(255, 102, 0, 0.7);
         }
-
-        /* Footer Section */
-        .footer {
-            text-align: center;
-            padding: 30px;
-            color: #888;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .footer .social-links {
-            margin-top: 20px;
-        }
-
-        .footer .social-links a {
-            color: #fff;
-            font-size: 1.5em;
-            margin: 0 10px;
-            transition: color 0.3s;
-        }
-
-        .footer .social-links a:hover {
-            color: #ff6600;
-        }
-
-        /* Animasi Fade-Up */
-        .fade-up {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
         
-        .fade-up.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Responsive Design */
         @media (max-width: 768px) {
-            .navbar {
-                padding: 10px 15px;
-                height: 7%;
-            }
-
-            .navbar .logo {
-                font-size: 1.5em;
-            }
-
-            .navbar .nav-links {
-                gap: 15px;
-            }
-
-            .navbar .nav-links a {
-                font-size: 1em;
-                padding: 5px;
-            }
-
             .hero {
                 padding: 100px 20px 40px;
             }
@@ -366,7 +244,7 @@
     <div class="navbar">
         <div class="logo">Nerv glorious</div>
         <div class="nav-links">
-            <a href="#">About Us</a>
+            <a href="about.html">About Us</a>
         </div>
     </div>
 
@@ -384,7 +262,7 @@
 
     <!-- Mockup Section -->
     <div class="mockup fade-up">
-        <img src="main-dark.webp" alt="Discord Server Screenshot" loading="lazy">
+        <img src="assets/image/main-dark.webp" alt="Discord Server Screenshot" loading="lazy">
     </div>
 
     <!-- Testimonials Section -->
@@ -420,44 +298,7 @@
         </div>
     </div>
 
-    <script>
-        document.documentElement.classList.add('js-enabled'); // Tambahkan class ke <html>
-
-        // Nonaktifkan scroll sementara saat halaman dimuat
-        document.body.classList.add('loading');
-
-        // Deteksi scroll untuk navbar
-        const navbar = document.querySelector('.navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) { // Jika di-scroll lebih dari 50px
-                navbar.classList.add('navbar-scrolled');
-            } else {
-                navbar.classList.remove('navbar-scrolled');
-            }
-        });
-
-        // Animasi fade-up dengan delay
-        document.addEventListener("DOMContentLoaded", function () {
-            const fadeElements = document.querySelectorAll('.fade-up');
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        // Tambahkan delay 100ms sebelum animasi dimulai
-                        setTimeout(() => {
-                            entry.target.classList.add('show');
-                        }, 100);
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            fadeElements.forEach(el => observer.observe(el));
-
-            // Aktifkan scroll setelah halaman selesai dimuat
-            setTimeout(() => {
-                document.body.classList.remove('loading');
-            }, 500); // Delay 500ms untuk memastikan semua elemen sudah dimuat
-        });
-    </script>
+    <!-- Tambahkan JavaScript Universal -->
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

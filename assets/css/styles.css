@@ -1,0 +1,119 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #1a1a1a;
+    color: #eee;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Nonaktifkan scroll sementara saat halaman dimuat */
+body.loading {
+    overflow: hidden;
+}
+
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 50px;
+    background-color: rgba(26, 26, 26, 0.7);
+    backdrop-filter: blur(5px);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    box-sizing: border-box;
+    transition: border-bottom 0.3s, box-shadow 0.3s;
+}
+
+/* Efek border atau shadow saat navbar di-scroll */
+.navbar-scrolled {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+.navbar .logo {
+    font-size: 1.6em;
+    font-weight: bold;
+    flex-grow: 1;
+    font-family: 'Russo One', sans-serif;
+}
+
+.navbar .nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: 1.1em;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar .nav-links a:hover {
+    color: #ff6600;
+    transition: color 0.3s;
+}
+
+/* Animasi Fade-Up */
+.fade-up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-up.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Footer Section */
+.footer {
+    text-align: center;
+    padding: 30px;
+    color: #888;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer .social-links {
+    margin-top: 20px;
+}
+
+.footer .social-links a {
+    color: #fff;
+    font-size: 1.5em;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.footer .social-links a:hover {
+    color: #ff6600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px 15px;
+        height: 7%;
+    }
+
+    .navbar .logo {
+        font-size: 1.5em;
+    }
+
+    .navbar .nav-links {
+        gap: 15px;
+    }
+
+    .navbar .nav-links a {
+        font-size: 1em;
+        padding: 5px;
+    }
+}
