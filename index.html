@@ -9,6 +9,9 @@
     <!-- Tambahkan Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@400;700&family=Poppins:wght@400;700&family=Russo+One&display=swap" rel="stylesheet">
 
+    <!-- Tambahkan Font Awesome untuk ikon media sosial -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <title>Nerv - We Play Games</title>
     <style>
         html {
@@ -40,6 +43,13 @@
             align-items: center;
             z-index: 100;
             box-sizing: border-box;
+            transition: border-bottom 0.3s, box-shadow 0.3s; /* Efek transisi */
+        }
+
+        /* Efek border atau shadow saat navbar di-scroll */
+        .navbar-scrolled {
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* Border putih transparan */
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1); /* Shadow putih */
         }
 
         .navbar .logo {
@@ -149,7 +159,7 @@
             box-shadow: 0 0 15px rgba(255, 102, 0, 0.7);
         }
 
-        /* Mockup Section Styles */
+        /* Mockup Section */
         .mockup {
             margin-top: 50px;
             text-align: center;
@@ -160,16 +170,121 @@
             max-width: 90%;
             border-radius: 10px;
             box-shadow: 0 0 30px rgba(240, 90, 40, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        /* Footer Section Styles */
+        .mockup img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 40px rgba(240, 90, 40, 0.8);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #222;
+        }
+
+        .testimonials h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .testimonial-list {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .testimonial-card {
+            background-color: #333;
+            padding: 30px;
+            border-radius: 15px;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            color: #ddd;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .testimonial-card h3 {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #ff6600;
+            font-weight: bold;
+        }
+
+        /* Join Us Section */
+        .join-us {
+            padding: 50px 20px;
+            background-color: #222;
+            text-align: center;
+        }
+
+        .join-us h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .join-us p {
+            font-size: 1.2em;
+            color: #ddd;
+            margin-bottom: 30px;
+        }
+
+        .join-us .cta-button {
+            background-color: #ff6600;
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: background-color 0.3s;
+        }
+
+        .join-us .cta-button:hover {
+            background-color: #e65c00;
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255, 102, 0, 0.7);
+        }
+
+        /* Footer Section */
         .footer {
             text-align: center;
             padding: 30px;
             color: #888;
-            font-family: 'Poppins', sans-serif; /* Default font untuk footer */
+            font-family: 'Poppins', sans-serif;
         }
-        
+
+        .footer .social-links {
+            margin-top: 20px;
+        }
+
+        .footer .social-links a {
+            color: #fff;
+            font-size: 1.5em;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .footer .social-links a:hover {
+            color: #ff6600;
+        }
+
         /* Animasi Fade-Up */
         .fade-up {
             opacity: 0;
@@ -203,16 +318,16 @@
             }
 
             .hero {
-                padding: 100px 20px 40px; /* Jarak atas diperbesar untuk mobile */
+                padding: 100px 20px 40px;
             }
 
             .hero-logo .n-capital {
-                font-size: 6em; /* Ukuran lebih kecil untuk mobile */
+                font-size: 6em;
             }
 
             .hero-logo .nerv-text {
-                font-size: 1em; /* Ukuran lebih kecil untuk mobile */
-                transform: translateX(-50%) skew(-15deg); /* Sesuaikan untuk mobile */
+                font-size: 1em;
+                transform: translateX(-50%) skew(-15deg);
             }
 
             .hero h1 {
@@ -227,6 +342,15 @@
                 padding: 12px 25px;
                 font-size: 1em;
                 box-shadow: 0 0 10px rgba(255, 102, 0, 0.5);
+            }
+
+            .testimonial-list {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .testimonial-card {
+                width: 80%;
             }
         }
     </style>
@@ -248,26 +372,65 @@
             <span class="nerv-text">Nerv</span>
         </div>
         <h1>We play<br>Games</h1>
-        <p>Nerv Glorious is a gaming collective focused on team formation, cooperative gameplay, and the exchange of tips for optimal gaming experiences.</p>
+        <p>Nerv glorious is a group of people who play games. We create teams to play games, work together to complete games, and give each other suggestions to make playing games more exciting.</p>
         <a href="#" class="cta-button">About us</a>
     </div>
 
     <!-- Mockup Section -->
     <div class="mockup fade-up">
-        <img src="main-dark.webp" alt="mockup Nerv" loading="lazy">
+        <img src="main-dark.webp" alt="Discord Server Screenshot" loading="lazy">
+    </div>
+
+    <!-- Testimonials Section -->
+    <div class="testimonials fade-up">
+        <h2>What Our Members Say</h2>
+        <div class="testimonial-list">
+            <div class="testimonial-card">
+                <p>"Joining Nerv glorious has been an amazing experience. I've met so many skilled players!"</p>
+                <h3>John Doe</h3>
+            </div>
+            <div class="testimonial-card">
+                <p>"The community is very supportive, and the events are always fun!"</p>
+                <h3>Jane Smith</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Join Us Section -->
+    <div class="join-us fade-up">
+        <h2>Join Our Community</h2>
+        <p>Be part of Nerv glorious and connect with gamers from around the world!</p>
+        <a href="https://discord.gg/your-invite-link" class="cta-button" target="_blank">Join Us on Discord</a>
     </div>
 
     <!-- Footer Section -->
     <div class="footer fade-up">
         <p>© 2025 Nerv glorious. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://discord.com" target="_blank"><i class="fab fa-discord"></i></a>
+        </div>
     </div>
 
     <script>
         document.documentElement.classList.add('js-enabled'); // Tambahkan class ke <html>
-        
+
+        // Deteksi scroll untuk navbar
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) { // Jika di-scroll lebih dari 50px
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        });
+
+        // Animasi fade-up
         document.addEventListener("DOMContentLoaded", function () {
             const fadeElements = document.querySelectorAll('.fade-up');
-        
+
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -275,7 +438,7 @@
                     }
                 });
             }, { threshold: 0.1 });
-        
+
             fadeElements.forEach(el => observer.observe(el));
         });
     </script>
