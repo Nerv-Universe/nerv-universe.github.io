@@ -18,13 +18,6 @@
     <title>About Us - Nerv Glorious</title>
     <style>
         /* Style Spesifik untuk Halaman About */
-        .about-us {
-            padding: 150px 20px 50px;
-            max-width: 1200px;
-            margin: auto;
-            text-align: center;
-        }
-
         .about-us h1 {
             font-size: 3.5em;
             margin-bottom: 20px;
@@ -40,15 +33,6 @@
             color: #ddd;
             margin-bottom: 30px;
             font-family: 'Montserrat', sans-serif;
-        }
-
-        .about-us .section-title {
-            font-size: 2.5em;
-            margin-top: 50px;
-            margin-bottom: 20px;
-            font-family: 'Orbitron', sans-serif;
-            color: #ff6600;
-            text-shadow: 0 0 10px rgba(255, 102, 0, 0.5);
         }
 
         .team-members {
@@ -94,32 +78,10 @@
             color: #ddd;
         }
 
-        .cta-button {
-            background-color: #ff6600;
-            color: #fff;
-            padding: 15px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 1.2em;
-            transition: background-color 0.3s, transform 0.3s;
-            display: inline-block;
-            margin-top: 30px;
-        }
-
-        .cta-button:hover {
-            background-color: #e65c00;
-            transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(255, 102, 0, 0.7);
-        }
-
         /* Responsive Design untuk Halaman About */
         @media (max-width: 768px) {
             .about-us h1 {
                 font-size: 2.5em;
-            }
-
-            .about-us .section-title {
-                font-size: 2em;
             }
 
             .team-members {
@@ -147,7 +109,7 @@
     <div class="about-us">
         <!-- Judul dan Deskripsi -->
         <div class="fade-up">
-            <h1>About Us</h1>
+            <h1 class="gradient-text">About Us</h1>
             <p>Nerv glorious is a passionate gaming community founded in 2020. We bring together gamers from around the world to create teams, collaborate, and enjoy gaming together.</p>
         </div>
 
@@ -167,18 +129,18 @@
         <!-- Anggota Tim -->
         <div class="fade-up">
             <div class="section-title">Our Team</div>
-            <div class="team-members">
-                <div class="team-member">
+            <div class="card-grid">
+                <div class="card team-member">
                     <img src="member1.jpg" alt="John Doe">
                     <h3>John Doe</h3>
                     <p>Founder & CEO</p>
                 </div>
-                <div class="team-member">
+                <div class="card team-member">
                     <img src="member2.jpg" alt="Jane Smith">
                     <h3>Jane Smith</h3>
                     <p>Community Manager</p>
                 </div>
-                <div class="team-member">
+                <div class="card team-member">
                     <img src="member3.jpg" alt="Mike Johnson">
                     <h3>Mike Johnson</h3>
                     <p>Esports Coordinator</p>

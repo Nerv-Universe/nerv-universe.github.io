@@ -97,8 +97,109 @@ body.loading {
     color: #ff6600;
 }
 
+/* Universal Section Styling */
+.section {
+    padding: 50px 20px;
+    text-align: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section-title {
+    font-size: 2.5em;
+    margin: 50px 0 20px;
+    font-family: 'Orbitron', sans-serif;
+    color: #ff6600;
+    text-shadow: 0 0 10px rgba(255, 102, 0, 0.5);
+}
+
+/* Header Sections */
+.hero, .about-us {
+    padding: 150px 20px 50px;
+    text-align: center;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Card Layouts */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(255, 102, 0, 0.3);
+}
+
+/* CTA Buttons */
+.cta-button {
+    background-color: #ff6600;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: background-color 0.3s, transform 0.3s;
+    display: inline-block;
+    margin-top: 30px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.cta-button:hover {
+    background-color: #e65c00;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 102, 0, 0.7);
+}
+
+/* Text Styles */
+.gradient-text {
+    background: linear-gradient(45deg, #ff6600, #ff3300);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(255, 102, 0, 0.5);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
+    .hero, .about-us {
+        padding: 100px 20px 40px;
+    }
+
+    .section-title {
+        font-size: 2em;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+        padding: 0 10px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .cta-button {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+    
     .navbar {
         padding: 10px 15px;
         height: 7%;
