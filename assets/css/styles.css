@@ -213,6 +213,19 @@ body.loading {
     background-color: #222;
 }
 
+ /* Join Us Section */
+.join-us h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.join-us p {
+    font-size: 1.2em;
+    color: #ddd;
+    margin-bottom: 30px;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero, .about-us {
