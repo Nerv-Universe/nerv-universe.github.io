@@ -19,9 +19,6 @@
     <style>
         /* Style Spesifik untuk Halaman About */
         .about-us h1 {
-            font-size: 3.5em;
-            margin-bottom: 20px;
-            font-family: 'Orbitron', sans-serif;
             background: linear-gradient(45deg, #ff6600, #ff3300);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -42,22 +39,115 @@
             margin-bottom: 15px;
             border: 3px solid #ff6600;
         }
-
-        /* Responsive Design untuk Halaman About */
+          
+        /* Modern About Us Section Styles */
+        .about-us {
+            text-align: left;
+            max-width: 1000px;
+        }
+        
+        .about-us h1 {
+            font-size: 4em;
+            margin-bottom: 30px;
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+        }
+        
+        /* Style untuk section konten */
+        .about-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin: 60px 0;
+        }
+        
+        .about-card {
+            background: linear-gradient(145deg, #2a2a2a, #333);
+            border-radius: 20px;
+            padding: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .about-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 102, 0, 0.1);
+        }
+        
+        .about-card .section-title {
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: left;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .about-card .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #ff6600, transparent);
+        }
+        
+        .about-card p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #ddd;
+            margin-bottom: 20px;
+        }
+        
+        /* Vision & Mission Style */
+        .vision-mission {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .vision-mission div {
+            padding: 25px;
+            background: rgba(255, 102, 0, 0.1);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 102, 0, 0.2);
+        }
+        
+        .vision-mission h3 {
+            color: #ff6600;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        /* Responsive adjustments */
         @media (max-width: 768px) {
             .about-us h1 {
-                font-size: 2.5em;
+                font-size: 3em;
             }
-
+        
+            .vision-mission {
+                grid-template-columns: 1fr;
+            }
+        
+            .about-card .section-title {
+                font-size: 1.8em;
+            }
+        
+            .about-card {
+                padding: 25px;
+            }
+            
             .team-members {
-                grid-template-columns: 1fr; /* Satu kolom di layar mobile */
+                grid-template-columns: 1fr; 
                 padding: 0 10px; /* Kurangi padding di layar mobile */
             }
 
             .team-member {
-                width: 100%; /* Kartu memenuhi lebar layar */
-                max-width: 300px; /* Batasi lebar maksimum kartu */
-                margin: 0 auto; /* Pusatkan kartu */
+                width: 100%; 
+                max-width: 300px;
+                margin: 0 auto;
             }
         }
     </style>
@@ -72,23 +162,32 @@
     </div>
     <!-- About Us Section -->
     <div class="about-us">
-        <!-- Judul dan Deskripsi -->
-        <div class="fade-up">
-            <h1 class="gradient-text">About Us</h1>
-            <p>Nerv glorious is a passionate gaming community founded in 2020. We bring together gamers from around the world to create teams, collaborate, and enjoy gaming together.</p>
-        </div>
+      <div class="fade-up">
+          <h1 class="gradient-text">About Us</h1>
+          <p>Nerv glorious is a passionate gaming community founded in 2020. We bring together gamers from around the world to create teams, collaborate, and enjoy gaming together.</p>
+      </div>
 
-        <!-- Sejarah -->
-        <div class="fade-up">
-            <div class="section-title">Our Story</div>
-            <p>Nerv glorious started as a small group of friends who loved playing games together. Over time, we grew into a thriving community with hundreds of members. Our mission is to create a welcoming and supportive environment for gamers of all skill levels.</p>
-        </div>
-
-        <!-- Visi dan Misi -->
-        <div class="fade-up">
-            <div class="section-title">Vision & Mission</div>
-            <p><strong>Vision:</strong> To be the most inclusive and supportive gaming community in the world.</p>
-            <p><strong>Mission:</strong> To connect gamers, foster teamwork, and celebrate the joy of gaming.</p>
+        <div class="about-content">
+            <!-- Our Story Section -->
+            <div class="about-card fade-up">
+                <div class="section-title">Our Story</div>
+                <p>Nerv glorious started as a small group of friends who loved playing games together. Over time, we grew into a thriving community with hundreds of members. Our mission is to create [...]</p>
+            </div>
+    
+            <!-- Vision & Mission Section -->
+            <div class="about-card fade-up">
+                <div class="section-title">Vision & Mission</div>
+                <div class="vision-mission">
+                    <div>
+                        <h3>Vision</h3>
+                        <p>To be the most inclusive and supportive gaming community in the world.</p>
+                    </div>
+                    <div>
+                        <h3>Mission</h3>
+                        <p>To connect gamers, foster teamwork, and celebrate the joy of gaming.</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Anggota Tim -->
