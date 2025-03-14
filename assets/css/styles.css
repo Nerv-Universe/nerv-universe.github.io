@@ -143,7 +143,7 @@ body.loading {
 
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(255, 102, 0, 0.3);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* CTA Buttons */
@@ -172,6 +172,45 @@ body.loading {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 0 0 20px rgba(255, 102, 0, 0.5);
+}
+
+/* Team Member and Testimonial Specific Styles */
+.team-member img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 3px solid #ff6600;
+}
+
+.card h3 {
+    font-size: 1.4em;
+    margin: 20px 0 10px;
+    color: #ff6600;
+    font-weight: bold;
+}
+
+.card p {
+    font-size: 1.1em;
+    color: #ddd;
+    line-height: 1.6;
+}
+
+.testimonial-card p {
+    font-style: italic;
+}
+
+/* Section Text Styles */
+.section p, .about-us p {
+    font-size: 1.2em;
+    color: #ddd;
+    margin-bottom: 30px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Dark Background Sections */
+.dark-bg {
+    background-color: #222;
 }
 
 /* Responsive Design */
@@ -216,5 +255,9 @@ body.loading {
     .navbar .nav-links a {
         font-size: 1em;
         padding: 5px;
+    }
+    
+    .testimonial-card {
+        width: 80%;
     }
 }
