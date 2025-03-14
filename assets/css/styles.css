@@ -65,13 +65,17 @@ body.loading {
 /* Animasi Fade-Up */
 .fade-up {
     opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transform: translateY(30px);
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: opacity, transform;
+    backface-visibility: hidden; /* Meningkatkan performa rendering */
+    perspective: 1000px; /* Meningkatkan performa 3D transforms */
 }
 
 .fade-up.show {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Footer Section */
@@ -290,5 +294,15 @@ body.loading {
     .navbar .nav-links {
         margin-left: auto;  /* Mendorong nav-links ke kanan */
         margin-right: 50px; /* Memberikan sedikit jarak dari ujung kanan */
+    }
+}
+
+/* Tambahkan class untuk browser Firefox */
+@-moz-document url-prefix() {
+    .fade-up {
+        transform: translate3d(0, 30px, 0); /* Gunakan translate3d untuk Firefox */
+    }
+    .fade-up.show {
+        transform: translate3d(0, 0, 0);
     }
 }

@@ -14,25 +14,44 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Animasi fade-up dengan IntersectionObserver
+// Animasi fade-up dengan IntersectionObserver yang dioptimalkan
 document.addEventListener("DOMContentLoaded", function () {
     const fadeElements = document.querySelectorAll('.fade-up');
+    
+    // Deteksi Firefox
+    const isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 
-    const observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Tambahkan delay 100ms sebelum animasi dimulai
-                setTimeout(() => {
+                // Tambahkan class untuk animasi
+                requestAnimationFrame(() => {
                     entry.target.classList.add('show');
-                }, 100);
+                });
+                // Hentikan observasi setelah animasi
+                observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.1 });
+    }, { 
+        threshold: 0.15, // Tingkatkan threshold sedikit
+        rootMargin: '0px 0px -50px 0px' // Tambahkan margin untuk trigger lebih awal
+    });
 
-    fadeElements.forEach(el => observer.observe(el));
+    // Terapkan pengamatan dengan delay untuk setiap elemen
+    fadeElements.forEach((el, index) => {
+        // Tunggu DOM selesai loading
+        setTimeout(() => {
+            observer.observe(el);
+        }, 100); // Delay minimal untuk memastikan smooth loading
+    });
 
     // Aktifkan scroll setelah halaman selesai dimuat
     setTimeout(() => {
         document.body.classList.remove('loading');
-    }, 500); // Delay 500ms untuk memastikan semua elemen sudah dimuat
+    }, 300); // Kurangi delay loading
+});
+
+// Tambahkan event listener untuk memastikan semua gambar dimuat
+window.addEventListener('load', function() {
+    document.body.classList.remove('loading');
 });
