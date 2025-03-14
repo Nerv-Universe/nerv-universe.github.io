@@ -246,10 +246,12 @@ body.loading {
 
     .navbar .logo {
         font-size: 1.5em;
+        flex-grow: 1;
     }
 
     .navbar .nav-links {
         gap: 15px;
+        margin-right: 0; 
     }
 
     .navbar .nav-links a {
@@ -259,5 +261,21 @@ body.loading {
     
     .testimonial-card {
         width: 80%;
+    }
+}
+
+/* Tambahkan media query untuk layar besar */
+@media (min-width: 1024px) {
+    .navbar {
+        padding: 15px 15%;  /* Menambah padding di kiri dan kanan */
+    }
+    
+    .navbar .logo {
+        flex-grow: 0;  /* Logo tidak akan mengambil semua space yang tersedia */
+    }
+    
+    .navbar .nav-links {
+        margin-left: auto;  /* Mendorong nav-links ke kanan */
+        margin-right: 50px; /* Memberikan sedikit jarak dari ujung kanan */
     }
 }
